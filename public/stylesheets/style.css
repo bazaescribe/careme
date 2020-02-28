@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
+
+:root {
+  --brand-color: #37A4F0;
+  --alt-color: #2DF8E0;
+  --dakr-color: #2760D9;
+  --light-color: #27BDD9;
+  --off-white: #DEF5FA;
+  --dark-text: #25004A;
+}
+
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.--bg-light{
+  background: var(--off-white);
+}
+
+.d-flex{
+  display: flex;
+}
+
+.pad-16{
+  padding: 16px;
+}
+
+.pad-20{
+  padding: 20px;
+}
+
+.pad-40{
+  padding: 40px;
+}
+
+textarea, input, button { outline: none; }
+
+select{
+  padding: 16px;
+  margin: 0px 16px 16px 0px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin: 16px 0px;
+}
+
+h1{
+  font-size: 96px;
+  font-weight: 900;
+}
+
+h2{
+  font-size: 60px;
+}
+
+h3{
+  font-size: 48px;
+}
+
+h4{
+  font-size: 34px;
+}
+
+h5{
+  font-size: 24px;
+}
+
+h6{
+  font-size: 20px;
+}
+
+label{
+  margin: 0px 8px 8px 0px;
+}
+
+.--text-white{
+  color: white;
+}
+
+.--text-dark{
+  color: var(--dark-text);
+}
+
+.--align-center{
+  text-align: center;
+}
+
+button{
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 16px 32px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 4px;
+}
+
+.--btn-cta{
+  background: white;
+  color: var(--dark-color);
+}
+
+.--btn-hv{
+  background: var(--alt-color);
+  color: var(--dakr-color);
+}
+
+.--btn-ghost{
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.hero{
+  background: linear-gradient(69.78deg, #37A4F0 60.98%, #2DF8E0 60.98%);
+  padding: 40px;
+  min-height: 80vh;
+}
+
+.hero .content{
+  display: flex;
+  align-items: flex-end;
+}
+
+.toolbar{
+  background: var(--brand-color);
+  padding: 40px;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo{
+  width: 120px;
+}
+
+.phone{
+  margin: 12px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.container{
+  display: table;
+  width: 100%;
+  border-spacing: 16px;
+  margin-left: -20px; /* remove outer border spacing */
+    margin-right: -20px; /* remove outer border spacing */
+}
+
+.row{
+  display: table-row;
+}
+
+.tile{
+  margin: 0px 16px 16px 0px;
+  background: peru;
+  display: table-cell;
+}
