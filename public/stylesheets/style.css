@@ -16,6 +16,10 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
+.--bg-brand{
+  background: var(--brand-color);
+}
+
 .--bg-light{
   background: var(--off-white);
 }
@@ -148,6 +152,7 @@ button{
   margin: 12px;
   font-size: 14px;
   font-weight: bold;
+  color: white;
 }
 
 .container{
@@ -166,4 +171,9 @@ button{
   margin: 0px 16px 16px 0px;
   background: peru;
   display: table-cell;
+}
+
+.--outline{
+  -webkit-text-stroke: 3px white;
+  color: rgba(0, 0, 0, 0.0);
 }

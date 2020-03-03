@@ -1,0 +1,24 @@
+html
+ head
+  link(href='stylesheets/style.css', rel='stylesheet')
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+ body.--bg-brand
+  .toolbar
+    .nav
+      div
+        img(src="images/logo.png", alt="Care Me logo", class="logo")
+      div
+        span.phone (55) 8916 5235
+        span.phone (55) 8915 5236
+  div.pad-40
+    h1.--outline Tu solicitud ha sido recibida
+    br
+    h5.--text-white 
+      | Nos comunicaremos contigo en los próximos minutos para confirmar la
+      br
+      | información que necesites en tu servicio.
+
+  script.
+    $(document).ready(function(){
+      console.log("This is something awesome");
+    });
