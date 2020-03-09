@@ -2,6 +2,7 @@ html
  head
   link(href='stylesheets/style.css', rel='stylesheet')
   script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+  script(src="javascripts/jquery.serialize-object.js")
  body
   .toolbar
     .nav
@@ -11,72 +12,92 @@ html
         span.phone (55) 8916 5235
         span.phone (55) 8915 5236
   div.pad-40
-    h3 Configuración del servicio
-    h5 ¿En dónde necesitas el servicio?
-    select#(name="Hola")
-      option(disabled selected) Selecciona tu localidad
-      option(value="AO") Álvaro Obregón
-      option(value="AZ") Azcapotzalco
-      option(value="BJ") Benito Juárez
-      option(value="CO") Coyoacán
-      option(value="CU") Cuajimalpa
-      option(value="CH") Cuauhtémoc
-      option(value="GA") Gustavo A. Madero
-      option(value="IC") Iztacalco
-      option(value="IZ") Iztapalapa
-      option(value="MC") Magdalena Contreras
-      option(value="MH") Miguel Hidalgo
-      option(value="MA") Milpa Alta
-      option(value="TH") Tlahuac
-      option(value="TL") Tlalpan
-      option(value="VC") Venustiano Carranza
-      option(value="XO") Xochimilco
+    form(id="test-form")
+      h3 Configuración del servicio
+      h5 ¿Cómo te contactamos?
+      input(type="text", name="name", placeholder="Nombre de quien cotiza")
+      input(type="text", name="mail", placeholder="Correo electrónico")
+      input(type="text", name="phone", placeholder="Teléfono")
+      h5 ¿En dónde necesitas el servicio?
+      select(name="zone")
+        option(disabled selected) Selecciona tu localidad
+        option(value="Alvaro Obregon") Álvaro Obregón
+        option(value="Azcapotzalco") Azcapotzalco
+        option(value="Benito Juarez") Benito Juárez
+        option(value="Coyoacan") Coyoacán
+        option(value="Cuajimalpa") Cuajimalpa
+        option(value="Cuauhtemoc") Cuauhtémoc
+        option(value="GAM") Gustavo A. Madero
+        option(value="Iztacalco") Iztacalco
+        option(value="Iztapalapa") Iztapalapa
+        option(value="Magdalena Contreras") Magdalena Contreras
+        option(value="Miguel Hidalgo") Miguel Hidalgo
+        option(value="Milpa Alta") Milpa Alta
+        option(value="Tlahuac") Tlahuac
+        option(value="Tlalpan") Tlalpan
+        option(value="Venustiano Carranza") Venustiano Carranza
+        option(value="Xochimilco") Xochimilco
 
-    h5 Cuéntanos sobre tu paciente
-    select#(name="Hola")
-      option(value="18") Entre 18 y 30 años
-      option(value="31") Entre 31 y 45 años
-      option(value="46") Entre 46 y 60 años
-      option(value="61+") 61 o más años
-    select#(name="sex")
-      option(value="Hombre") Hombre
-      option(value="Mujer") Mujer
+      h5 Cuéntanos sobre tu paciente
+      select(name="age")
+        option(value="18 to 30") Entre 18 y 30 años
+        option(value="31 to 45") Entre 31 y 45 años
+        option(value="46 to 60") Entre 46 y 60 años
+        option(value="61 plus") 61 o más años
+      select(name="sex")
+        option(value="Hombre") Hombre
+        option(value="Mujer") Mujer
 
-    p Selecciona todas las condiciones que requieran cuidado
+      p Selecciona todas las condiciones que requieran cuidado
 
 
-    
-    input#remember(type='checkbox', name='incontinencia', checked=true)
-    label(for="incontinencia") Incontinencia
+      
+      input#remember(type='checkbox', name='incontinencia', checked=true)
+      label(for="incontinencia") Incontinencia
 
-    input#remember(type='checkbox', name='diabetes', checked=true)
-    label(for="diabetes") Diabetes
+      input#remember(type='checkbox', name='diabetes', checked=true)
+      label(for="diabetes") Diabetes
 
-    input#remember(type='checkbox', name='hipertension', checked=true)
-    label(for="hipertension") Hipertensión
+      input#remember(type='checkbox', name='hipertension', checked=true)
+      label(for="hipertension") Hipertensión
 
-    input#remember(type='checkbox', name='alzheimer', checked=true)
-    label(for="alzheimer") Alzheimer
+      input#remember(type='checkbox', name='alzheimer', checked=true)
+      label(for="alzheimer") Alzheimer
 
-    br
+      br
 
-    input#remember(type='checkbox', name='parkinson', checked=true)
-    label(for="parkinson") Parkinson
+      input#remember(type='checkbox', name='parkinson', checked=true)
+      label(for="parkinson") Parkinson
 
-    input#remember(type='checkbox', name='deterioro', checked=true)
-    label(for="deterioro") Deterioro Mental
+      input#remember(type='checkbox', name='deterioro', checked=true)
+      label(for="deterioro") Deterioro Mental
 
-    input#remember(type='checkbox', name='fracturas', checked=true)
-    label(for="fracturas") Fracturas
+      input#remember(type='checkbox', name='fracturas', checked=true)
+      label(for="fracturas") Fracturas
 
-    br
-    br
-    br
+      br
+      br
+      br
 
-    button.--btn-hv(type='submit') Solicita una cotización ahora
+      button.--btn-hv(type='submit', id="submit-form") Solicita una cotización ahora
 
 
     script.
-      $(document).ready(function(){
-        console.log("This is something awesome");
+      var $form = $('form#test-form'),
+          url = 'https://script.google.com/macros/s/AKfycbylIIaMayc18SBJU5m-w__ONBbBl6sRGQCUYsaoxMYddnd8QBU/exec'
+
+      $('#submit-form').on('click', function(e) {
+        e.preventDefault();
+        var jqxhr = $.ajax({
+          url: url,
+          method: "GET",
+          dataType: "json",
+          data: $form.serializeObject()
+        }).done();
+        console.log("Success")
+        //window.location.replace('/success');
+        $('.progress-bar').addClass('--processing');
+        setTimeout(function(){
+          window.location.href = '/thanks';
+        }, 1000);
       });

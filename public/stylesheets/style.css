@@ -47,6 +47,14 @@ select{
   margin: 0px 16px 16px 0px;
 }
 
+input[type="text"]{
+  padding: 8px;
+  margin: 0px 16px 8px 0px;
+  border-radius: 4px;
+  border: 1px solid #c4c4c4;
+  min-width: 200px;
+}
+
 a {
   color: #00B7FF;
 }
@@ -82,7 +90,7 @@ h6{
 }
 
 label{
-  margin: 0px 8px 8px 0px;
+  margin: 0px 16px 8px 0px;
 }
 
 .--text-white{
@@ -171,6 +179,8 @@ button{
   margin: 0px 16px 16px 0px;
   background: peru;
   display: table-cell;
+  min-height: 400px;
+  color: white;
 }
 
 .--outline{
