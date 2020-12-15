@@ -15,5 +15,9 @@ router.get('/thanks', function(req, res, next) {
   res.render('thanks', { title: 'Express' });
 });
 
+router.get('/proclean', function(req, res, next) {
+  res.render('desinfeccion', { title: 'Express' });
+});
+
 
 module.exports = router;

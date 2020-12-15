@@ -1,59 +1,173 @@
-html 
+<!DOCTYPE html>
+html(lang="en")
   head
-    link(href='stylesheets/style.css', rel='stylesheet')
-    title Careme - Cuidamos de los tuyos
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
-    script.
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-PX8KRVH');
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+    link(rel="stylesheet", href="stylesheets/style.css")
+    link(rel="stylesheet", href="https://unpkg.com/aos@2.3.1/dist/aos.css")
+
+    script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
+    script(src="https://unpkg.com/feather-icons")
+    script(src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js")
+
+    title Care Me - Cuidado profesional para tu familia
   body
-    noscript
-      iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-PX8KRVH', height='0', width='0', style='display:none;visibility:hidden')
-    .hero
-      .nav
-        div
-          img(src="images/logo.png", alt="Care Me logo", class="logo")
-        div
-          span.phone (55) 8916 5235
-          span.phone (55) 8915 5236
-      .content 
-        div
-          h1.--text-dark(style="margin-top: 100px")
-            | CUIDAMOS DE 
-            br 
-            | LOS TUYOS
-          h5.--text-white Encuentra cuidadores y enfermeras al servicio de tu familia
-          br
-          form(action="/contact")
-            button(class="--btn-cta")#button-cotizar Solicita tu cotización
-    div.pad-40
-      h3.--text-dark ¿Qué servicios tenemos?
-      .container
-        div.row(style="background: pink")
-          div.tile.pad-20(style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://image.freepik.com/free-photo/old-man-caregiver-sitting-yellow-sofa_23-2148239007.jpg);") 
-            br
-            br
-            br
-            br
-            h4 Cuidadores
-            p Los cuidadores son personas responsables, evaluados y registrados para proporcionar cuidados generales a personas que no tengan requerimientos especiales.
-          div.tile.pad-20(style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://envato-shoebox-0.imgix.net/5af0/4e85-412f-4e45-866f-2e3612416374/The+old+man_s+life+40_RE1.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=700&s=d119c9dd20572399a01c4054234481dd);") 
-            br
-            br
-            br
-            br
-            h4 Enfermeras
-            p Personal altamente capacitado, evaluado y con cédula profesional, dedicadas al cuidado de pacientes con enfermedades o condiciones crónicas que requieran atención personalizada.
+    nav.navbar.navigation
+      a(href="#").navbar-brand
+        img(src="images/careme-night.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
+      form(action="" method="method")
+        button.btn.btn-main LLÁMANOS (55) 8916 5235
+        button.btn.btn-accent WHATSAPP (55) 7832 1634
     
-    div.pad-40.--bg-light.--align-center(style="padding-top: 120px; padding-bottom: 120px")
-      h3.--text-dark Trabaja con nosotros
-      p 
-        | Si tienes experiencia en el cuidado de enfermos y adultos mayores, o si
-        br
-        | tienes educación en enferemería, te estamos buscando.
-      br
-      form(action="https://www.caregiver.mx/registro")
-        button.--btn-hv#button-keepers Regístrate ahora
+    .hero(style="background: var(--night)")
+      .container
+        .row
+          .col-lg 
+            h2.txt-light El mejor cuidado para los tuyos
+            hr
+            h5.txt-light Cuidado y acompañamiento profesional para las personas que más quieres. ❤️
+            br
+            form(action="" method="method")
+              p.caption.txt-light Déjanos tus datos y te contactaremos a la brevedad
+              .floating
+                input(type="text", placeholder="Nombre de contacto")
+                input#email(type="text", placeholder="Teléfono", name="")
+                button.btn.btn-main Enviar datos
+              p.caption.txt-light 
+                br
+                | Si tu paciente requiere cuidados especiales puedes solicitarlo aquí
+          .col-lg Adiós
+
+    .section.opinions
+      .opinion
+        .photo 
+          img(src="https://image.freepik.com/free-photo/beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg")
+        .text
+          p.quote Excelente servicio, el trabajo impecable y respetuosa en todo momento
+          p.caption María Fernanda Loredo Heinze - Ciudad de México
+
+    .section(style="background: var(--neutral-75)")
+      .container
+        .row
+          .col-6.step-text
+            div
+              h2 Cuidadores confiables
+              p Cientos de profesionales especializados en el cuidado de adultos mayores, pacientes post operatorios y lesionados, pasan por distintos filtros de selección para prestar sus servicios en la plataforma.
+              ul
+                li Seguridad y confiabilidad.
+                li Actitud y servicio.
+                li Conocimientos técnicos
+                li Documentación e identidad
+                li Certificados y cédula profesional. *
+              p.small * Validación exclusiva para el servicio de enfermeria
+          .col-6.step-photo
+            img(src="images/photos/cuidadores.png", alt="", data-aos="slide-left")
+    .section
+      .container
+        .row.jump
+          .col-4.step-photo
+            img(src="images/photos/solicitud.png", alt="", data-aos="zoom-in")
+          .col-8.step-text
+            div
+              h4 Solicita una cotización
+              p Déjanos tus datos en el formulario de contacto al inicio de está página, o platicanos si tú o tu paciente tiene alguna necesidad especial a cubrir en tu servicio en el formulario avanzado. 
+                br
+              |  Si lo prefieres también puedes enviarnos un mensaje.
+              br
+              br
+              a(href="#").btn.btn-main  Hola
+              a(href="#").btn.btn-accent  Envíanos un WhatsApp
+        .row.jump.step-text
+          .col-8.step-text
+            div
+              h4 Solicita una cotización
+              p Uno de nuestros expertos en cuidados te llamara para entender de mejor manera las necesidades de tu paciente y te ayudará a encontrar a la persona ideal para su cuidado.
+          .col-4.step-photo
+            img(src="images/photos/diagnostico.png", alt="", data-aos="zoom-in")
+        .row
+          .col-4.step-photo
+            img(src="images/photos/caregiver.png", alt="", data-aos="zoom-in")
+          .col-8.step-text
+            div
+              h4 Solicita una cotización
+              p La persona con el  mejor perfil para tus necesidades se presentará en tu domicilio con toda la información que proporcionaste anteriormente, lista para prestar sus servicios con la mayor calidad y seguridad posible.
+    
+    div(style="background: var(--night)").section
+      .container
+        .row.section-first
+          .col.step-photo
+            img(src="images/photos/careme-en-casa.png", alt="")
+          .col.step-text
+            div
+              img(src="images/logo-en-casa.png", alt="")
+              br
+              br
+              p.text-white Sabemos que la vida en casa es agotadora, únete a nuestras comunidades de estudio, activación física y recreación; activa u mente y conoce nuevas personas desde la comodidad de tu hogar.
+
+    div(style="background: var(--teal)").section
+      .container
+        .row
+          h3.text-white Cobertura en la CDMX y Área Metropolitana
+          p.text-white Actualmente la cobertura del servicio de Care Me comprende las dieciseis alcaldías de la Ciudad de México y cinco municipios del Estado de México, si necesitas un servicio fuera de esta zona no dudes en escribirnos y pronto llegaremos hasta donde estés.
+          div.chirp-list
+            span.chirp Álvaro Obregón
+            span.chirp Azcapotzalco
+            span.chirp Benito Juárez
+            span.chirp Coyoacán 
+            span.chirp Cuajimalpa de Morelos
+            span.chirp Cuauhtémoc
+            span.chirp Gustavo A. Madero
+            span.chirp Iztacalco
+            span.chirp Iztapalapa
+            span.chirp La Magdalena Contreras
+            span.chirp Miguel Hidalgo
+            span.chirp Milpa Alta
+            span.chirp Tláhuac
+            span.chirp Tlalpan
+            span.chirp Venustiano Carranza
+            span.chirp Xochimilco
+          div.chirp-list
+            span.chirp Ecatepec de Morelos
+            span.chirp Naucalpan
+            span.chirp Nezahualcóyotl
+            span.chirp Chimalhuacán 
+            span.chirp Tlalnepantla de Baz
+    .footer
+      .container
+        .row
+          div
+            a(href="#")
+              img(src="images/careme-light.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
+            br
+            br
+            p Llámanos al 
+              a(href="#") (55) 89 16 52 35
+              |  o al 
+              a(href="#") (55) 89 16 52 36
+              | , o 
+              a(href="#") escríbenos por whatsapp
+              | .
+            hr
+            p © 199 Technologies, 2020. Todos los derechos reservados. 
+              a(href="#") Aviso de privacidad 
+              |  -  
+              a(href="#") Términos y condiciones 
+            p.social 
+              a(href="#") 
+                i(data-feather="facebook")
+              |  
+              a(href="#")
+                i(data-feather="twitter")
+              |  
+              a(href="#")
+                i(data-feather="instagram")
+
+      script.
+        feather.replace()
+
+      script.
+        AOS.init();
+
+        
