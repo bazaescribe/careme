@@ -253,3 +253,30 @@ hr{
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+
+input[type=checkbox] + label {
+  color: var(--neutral-25);
+  background: var(--neutral-75);
+  padding: 8px 16px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  transition: 300ms ease all;
+} 
+
+input[type=checkbox]:checked + label {
+  background: linear-gradient(180deg, #FE5F55 0%, #F06C9B 100%);
+  box-shadow: inset 0px 4px 12px rgba(0, 0, 0, 0.25);
+  color: var(--neutral-99);
+} 
+
+input[type=checkbox]{
+  display: none;
+}

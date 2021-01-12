@@ -31,6 +31,30 @@ html(lang="en")
                 input#name(type="text", name="name", placeholder="Nombre").input-text
                 input#phone(type="phone", name="name", placeholder="Teléfono").input-text
                 input#mail(type="mail", name="name", placeholder="Correo electrónico").input-text
+                select#location(name="location").input-text 
+                  option(disabled selected) Localidad donde necesitas el servicio
+                  option(value="") Álvaro Obregón
+                  option(value="") Azcapotzalco
+                  option(value="") Benito Juárez
+                  option(value="") Coyoacán 
+                  option(value="") Cuajimalpa de Morelos
+                  option(value="") Cuauhtémoc
+                  option(value="") Gustavo A. Madero
+                  option(value="") Iztacalco
+                  option(value="") Iztapalapa
+                  option(value="") La Magdalena Contreras
+                  option(value="") Miguel Hidalgo
+                  option(value="") Milpa Alta
+                  option(value="") Tláhuac
+                  option(value="") Tlalpan
+                  option(value="") Venustiano Carranza
+                  option(value="") Xochimilco
+                  option(disabled)  
+                  option(value="") Ecatepec de Morelos
+                  option(value="") Naucalpan
+                  option(value="") Nezahualcóyotl
+                  option(value="") Chimalhuacán 
+                  option(value="") Tlalnepantla de Baz
                 br
                 br
                 h5 Datos del paciente
@@ -49,50 +73,72 @@ html(lang="en")
                   option(value="99") Mayor a 65 años
 
                 p.caption ¿Presenta alguna enfermedad en las vías respiratorias?
-                label.item COVID 19
-                  input#covid(type="checkbox", name="covid") 
-                label.item Neumonía
-                  input#neumonia(type="checkbox", name="neumonia") 
+
+                input#respiratoryA(type='checkbox' name='respiratoryA')
+                label(for='respiratoryA') COVID 19
+
+                input#respiratoryB(type='checkbox' name='respiratoryB')
+                label(for='respiratoryB') Neumonia
 
                 p.caption ¿Padece alguna enfermedad crónico degenerativa?
-                label.item Cáncer
-                  input#covid(type="checkbox", name="covid") 
-                label.item Diabetes
-                  input#covid(type="checkbox", name="covid") 
-                label.item Hipertensión
-                  input#covid(type="checkbox", name="covid") 
-                label.item Parkinson
-                  input#covid(type="checkbox", name="covid") 
-                label.item Alzheimer
-                  input#covid(type="checkbox", name="covid") 
-                label.item Deterioro mental
-                  input#covid(type="checkbox", name="covid") 
-                label.item Otro
-                  input#covid(type="checkbox", name="covid") 
+
+                input#cronicA(type='checkbox' name='cronicA')
+                label(for='cronicA') Cáncer
+
+                input#cronicB(type='checkbox' name='cronicB')
+                label(for='cronicB') Diabetes
+
+                input#cronicC(type='checkbox' name='cronicC')
+                label(for='cronicC') Hipertensión
+
+                input#cronicD(type='checkbox' name='cronicD')
+                label(for='cronicD') Parquinson
+
+                input#cronicE(type='checkbox' name='cronicE')
+                label(for='cronicE') Alzheimer
+
+                input#cronicF(type='checkbox' name='cronicF')
+                label(for='cronicF') Deterioro mental
+
+                input#cronicG(type='checkbox' name='cronicG')
+                label(for='cronicG') Otra
 
                 p.caption ¿Requiere cuidados post operatiorios?
-                label.item Cirugía
-                  input#covid(type="checkbox", name="covid") 
-                label.item Atención post parto
-                  input#covid(type="checkbox", name="covid") 
-                label.item Fracturas
-                  input#covid(type="checkbox", name="covid") 
+                
+                input#surgeryA(type='checkbox' name='surgeryA')
+                label(for='surgeryA') Atención post parto
+
+                input#surgeryB(type='checkbox' name='surgeryB')
+                label(for='surgeryB') Lesiones y fracturas
+
+                input#surgeryC(type='checkbox' name='surgeryC')
+                label(for='surgeryC') Cirugía general
+
+                input#surgeryD(type='checkbox' name='surgeryD')
+                label(for='surgeryD') Otra
+
                 br
                 br
+
                 h5 Datos del servicio
                 p.caption Elige el tipo de atención que tu paciente requiere, cuidadores para atención básica y enfermeros para pacientes con necesidades médicas específicas.
                 select#type(name="type").input-text 
                   option(disabled selected) Tipo de atención
                   option(value="enfermera") Enfermera
                   option(value="cuidador") Cuidadora
-                  option(value="not-sure") Aún no estoy seguro
+                  option(value="not-sure") No estoy seguro
                 br
                 p.caption ¿Necesitas el servicio por una única ocación, por unas semanas o alguien de planta?
                 select#recurrence(name="recurrence").input-text 
                   option(disabled selected) Recurrencia del servicio
                   option(value="one-time") Única ocasión
-                  option(value="part-time") Por una o varias semanas
-                  option(value="full-time") Alguien de planta
+                  option(value="part-time") Por algunas semanas
+                  option(value="full-time") Servicio de planta
+
+                br
+                br
+
+                button.btn.btn-main Enviar solicitud ahora
                 
           .col-lg Adiós
 
