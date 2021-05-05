@@ -11,6 +11,8 @@ html(lang="en")
     script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
     script(src="https://unpkg.com/feather-icons")
     script(src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="javascripts/jquery.serialize-object.js") 
 
     title Care Me - Cuidado profesional para tu familia
   body
@@ -29,12 +31,13 @@ html(lang="en")
             hr
             h5.txt-light Cuidado y acompañamiento profesional para las personas que más quieres. ❤️
             br
-            form(action="" method="method")
+            form(id="contact")
               p.caption.txt-light Déjanos tus datos y te contactaremos a la brevedad
               .floating
-                input(type="text", placeholder="Nombre de contacto")
-                input#email(type="text", placeholder="Teléfono", name="")
-                button.btn.btn-main Enviar datos
+                input(type="text", placeholder="Nombre de contacto" name="user_name")
+                input(type="text", placeholder="Teléfono", name="user_phone")
+                input(type="text", placeholder="Correo", name="user_mail")
+                input(type="button" value="Solicitar cotización" id="submit").btn.btn-main
               p.caption.txt-light 
                 br
                 | Si tu paciente requiere cuidados especiales puedes solicitarlo
@@ -170,5 +173,28 @@ html(lang="en")
 
       script.
         AOS.init();
+
+      script.
+        var $form = $('form#contact'),
+        url = 'https://script.google.com/macros/s/AKfycbws9ayBizj2htjV2i_kHKRVwnU3H8EwqXf4jAisk3RTWd3ecWsfO3Gv_YyRvE9X1-9R/exec'
+        
+        $('#submit').on('click', function(e) {
+          console.log("OK");
+          e.preventDefault();
+          var jqxhr = $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            data: $form.serializeObject()
+          }).done();
+          console.log(jqxhr);
+          //window.location.replace('/success');
+          $('.progress-bar').addClass('--processing');
+          setTimeout(function(){
+            //window.location.href = '/registered';
+            console.log("Success");
+          }, 1000);
+        });
+      
 
         

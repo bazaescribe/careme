@@ -11,6 +11,8 @@ html(lang="en")
     script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
     script(src="https://unpkg.com/feather-icons")
     script(src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="javascripts/jquery.serialize-object.js") 
 
     title Care Me - Cuidado profesional para tu familia
   body
@@ -26,45 +28,46 @@ html(lang="en")
         .row
           .col-lg 
             .card 
-              form
+              form#contact
                 h5 Datos de contacto
-                input#name(type="text", name="name", placeholder="Nombre").input-text
-                input#phone(type="phone", name="phone", placeholder="Teléfono").input-text
-                input#mail(type="mail", name="mail", placeholder="Correo electrónico").input-text
-                select#location(name="location").input-text 
+
+                input#name(type="text", name="user_name", placeholder="Nombre").input-text
+                input#phone(type="phone", name="user_phone", placeholder="Teléfono").input-text
+                input#mail(type="mail", name="user_mail", placeholder="Correo electrónico").input-text
+                select#location(name="location" onchange="selectReader('location')").input-text 
                   option(disabled selected) Localidad donde necesitas el servicio
-                  option(value="") Álvaro Obregón
-                  option(value="") Azcapotzalco
-                  option(value="") Benito Juárez
-                  option(value="") Coyoacán 
-                  option(value="") Cuajimalpa de Morelos
-                  option(value="") Cuauhtémoc
-                  option(value="") Gustavo A. Madero
-                  option(value="") Iztacalco
-                  option(value="") Iztapalapa
-                  option(value="") La Magdalena Contreras
-                  option(value="") Miguel Hidalgo
-                  option(value="") Milpa Alta
-                  option(value="") Tláhuac
-                  option(value="") Tlalpan
-                  option(value="") Venustiano Carranza
-                  option(value="") Xochimilco
+                  option(value="Alvaro Obregon") Álvaro Obregón
+                  option(value="Azcapotzalco") Azcapotzalco
+                  option(value="Benito Juarez") Benito Juárez
+                  option(value="Coyoacan") Coyoacán 
+                  option(value="Cuajimalpa") Cuajimalpa de Morelos
+                  option(value="Cuauhtemoc") Cuauhtémoc
+                  option(value="Gustavo A. Madero") Gustavo A. Madero
+                  option(value="Iztacalco") Iztacalco
+                  option(value="Iztapalapa") Iztapalapa
+                  option(value="Magdalena Contreras") La Magdalena Contreras
+                  option(value="Miguel Hidalgo") Miguel Hidalgo
+                  option(value="Milpa Alta") Milpa Alta
+                  option(value="Tlahuac") Tláhuac
+                  option(value="Tlalpan") Tlalpan
+                  option(value="Venustiano Carranza") Venustiano Carranza
+                  option(value="Xochimilco") Xochimilco
                   option(disabled)  
-                  option(value="") Ecatepec de Morelos
-                  option(value="") Naucalpan
-                  option(value="") Nezahualcóyotl
-                  option(value="") Chimalhuacán 
-                  option(value="") Tlalnepantla de Baz
+                  option(value="Ecatepec") Ecatepec de Morelos
+                  option(value="Naucalpan") Naucalpan
+                  option(value="Nezahualcoyotl") Nezahualcóyotl
+                  option(value="Chimalhuacan") Chimalhuacán 
+                  option(value="Talnepantla") Tlalnepantla de Baz
                 br
                 br
                 h5 Datos del paciente
-                input#patient(type="text", name="patient", placeholder="Nombre del paciente").input-text
-                select#sex(name="sex").input-text 
+                input#patient(type="text", name="patient_name", placeholder="Nombre del paciente").input-text
+                select#sex(name="sex" onchange="selectReader('sex')").input-text 
                   option(disabled selected) Sexo del paciente
-                  option(value="male") Hombre
-                  option(value="male") Mujer
-                  option(value="male") Prefiero no especificar
-                select#sex(name="sex").input-text 
+                  option(value="hombre") Hombre
+                  option(value="mujer") Mujer
+                  option(value="no-specified") Prefiero no especificar
+                select#age(name="sex" onchange="selectReader('age')").input-text 
                   option(disabled selected) Edad del paciente
                   option(value="20") Menor de 20 años
                   option(value="35") Entre 20 y 35 años
@@ -122,14 +125,14 @@ html(lang="en")
 
                 h5 Datos del servicio
                 p.caption Elige el tipo de atención que tu paciente requiere, cuidadores para atención básica y enfermeros para pacientes con necesidades médicas específicas.
-                select#type(name="type").input-text 
+                select#type(name="type" onchange="selectReader('type')").input-text 
                   option(disabled selected) Tipo de atención
                   option(value="enfermera") Enfermera
                   option(value="cuidador") Cuidadora
                   option(value="not-sure") No estoy seguro
                 br
-                p.caption ¿Por cuánto tiempo necesitas el servicio?
-                select#recurrence(name="recurrence").input-text 
+                p.caption ¿Necesitas el servicio por una única ocación, por unas semanas o alguien de planta?
+                select#recurrence(name="recurrence" onchange="selectReader('recurrence')").input-text 
                   option(disabled selected) Recurrencia del servicio
                   option(value="one-time") Única ocasión
                   option(value="part-time") Por una o dos semanas
@@ -137,8 +140,14 @@ html(lang="en")
 
                 br
                 br
+                div 
+                  input#location-field(type="text" name="user_location")
+                  input#sex-field(type="text" name="patient_sex")
+                  input#age-field(type="text" name="patient_age")
+                  input#type-field(type="text" name="service_type")
+                  input#recurrence-field(type="text" name="service_recurrence")
 
-                input(type="submit", value="Jeje ") 
+                input(type="button" value="Solicitar cotización" id="submit").btn.btn-main
                 
           .col-lg Adiós
 
@@ -177,6 +186,40 @@ html(lang="en")
 
       script.
         AOS.init();
+
+      script.
+        function selectReader(element) {
+          var selection = document.getElementById(element);
+          var strData = selection.value;
+          console.log(strData);
+
+          var target = element + "-field";
+          console.log(target);
+
+          document.getElementById(target).value = strData;
+        }
+      
+      script.
+        var $form = $('form#contact'),
+        url = 'https://script.google.com/macros/s/AKfycbws9ayBizj2htjV2i_kHKRVwnU3H8EwqXf4jAisk3RTWd3ecWsfO3Gv_YyRvE9X1-9R/exec'
+        
+        $('#submit').on('click', function(e) {
+          console.log("OK");
+          e.preventDefault();
+          var jqxhr = $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            data: $form.serializeObject()
+          }).done();
+          console.log(jqxhr);
+          //window.location.replace('/success');
+          $('.progress-bar').addClass('--processing');
+          setTimeout(function(){
+            //window.location.href = '/registered';
+            console.log("Success");
+          }, 1000);
+        });
 
         
 
