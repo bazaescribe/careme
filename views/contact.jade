@@ -29,8 +29,8 @@ html(lang="en")
               form
                 h5 Datos de contacto
                 input#name(type="text", name="name", placeholder="Nombre").input-text
-                input#phone(type="phone", name="name", placeholder="Teléfono").input-text
-                input#mail(type="mail", name="name", placeholder="Correo electrónico").input-text
+                input#phone(type="phone", name="phone", placeholder="Teléfono").input-text
+                input#mail(type="mail", name="mail", placeholder="Correo electrónico").input-text
                 select#location(name="location").input-text 
                   option(disabled selected) Localidad donde necesitas el servicio
                   option(value="") Álvaro Obregón
@@ -58,7 +58,7 @@ html(lang="en")
                 br
                 br
                 h5 Datos del paciente
-                input#patient(type="text", name="name", placeholder="Nombre del paciente").input-text
+                input#patient(type="text", name="patient", placeholder="Nombre del paciente").input-text
                 select#sex(name="sex").input-text 
                   option(disabled selected) Sexo del paciente
                   option(value="male") Hombre
@@ -92,7 +92,7 @@ html(lang="en")
                 label(for='cronicC') Hipertensión
 
                 input#cronicD(type='checkbox' name='cronicD')
-                label(for='cronicD') Parquinson
+                label(for='cronicD') Parkinson
 
                 input#cronicE(type='checkbox' name='cronicE')
                 label(for='cronicE') Alzheimer
@@ -128,17 +128,17 @@ html(lang="en")
                   option(value="cuidador") Cuidadora
                   option(value="not-sure") No estoy seguro
                 br
-                p.caption ¿Necesitas el servicio por una única ocación, por unas semanas o alguien de planta?
+                p.caption ¿Por cuánto tiempo necesitas el servicio?
                 select#recurrence(name="recurrence").input-text 
                   option(disabled selected) Recurrencia del servicio
                   option(value="one-time") Única ocasión
-                  option(value="part-time") Por algunas semanas
-                  option(value="full-time") Servicio de planta
+                  option(value="part-time") Por una o dos semanas
+                  option(value="full-time") Indefinido
 
                 br
                 br
 
-                button.btn.btn-main Enviar solicitud ahora
+                input(type="submit", value="Jeje ") 
                 
           .col-lg Adiós
 
