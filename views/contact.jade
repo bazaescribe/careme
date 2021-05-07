@@ -4,6 +4,8 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
+    link(rel="icon" type="image/png" href="images/favicon.png")
+
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
     link(rel="stylesheet", href="stylesheets/style.css")
     link(rel="stylesheet", href="https://unpkg.com/aos@2.3.1/dist/aos.css")
@@ -16,12 +18,16 @@ html(lang="en")
 
     title Care Me - Cuidado profesional para tu familia
   body
-    nav.navbar.navigation
-      a(href="/").navbar-brand
-        img(src="images/careme-night.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
-      form(action="" method="method")
-        button.btn.btn-main LLÁMANOS (55) 8916 5235
-        button.btn.btn-accent WHATSAPP (55) 7832 1634
+    nav(style="background: var(--night)")
+      .container 
+        .row 
+          .col 
+            div(style="display: flex; justify-content: space-between")
+              a(href="/").navbar-brand
+                img(src="images/careme-light.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
+              div 
+                a(href="").btn.btn-alt Llámanos
+                a(href="").btn.btn-main Contacta por whatsapp
     
     .hero(style="background: var(--night)")
       .container
@@ -29,7 +35,7 @@ html(lang="en")
           .col-lg 
             .card 
               form#contact
-                h5 Datos de contacto
+                h5 Datos de contacto     
 
                 input#name(type="text", name="user_name", placeholder="Nombre").input-text
                 input#phone(type="phone", name="user_phone", placeholder="Teléfono").input-text
@@ -140,7 +146,7 @@ html(lang="en")
 
                 br
                 br
-                div 
+                div(style="display: none")
                   input#location-field(type="text" name="user_location")
                   input#sex-field(type="text" name="patient_sex")
                   input#age-field(type="text" name="patient_age")
@@ -149,37 +155,46 @@ html(lang="en")
 
                 input(type="button" value="Solicitar cotización" id="submit").btn.btn-main
                 
-          .col-lg Adiós
+          .col-lg.center
+            img(src="images/photos/advanced.png", alt="alt")
 
-    .footer
+    footer
       .container
         .row
-          div
-            a(href="#")
-              img(src="images/careme-light.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
+          .col 
+            a(href="/").navbar-brand
+                img(src="images/careme-light.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
             br
             br
-            p Llámanos al 
-              a(href="#") (55) 89 16 52 35
-              |  o al 
-              a(href="#") (55) 89 16 52 36
-              | , o 
-              a(href="#") escríbenos por whatsapp
-              | .
-            hr
-            p © 199 Technologies, 2020. Todos los derechos reservados. 
-              a(href="#") Aviso de privacidad 
-              |  -  
-              a(href="#") Términos y condiciones 
-            p.social 
-              a(href="#") 
-                i(data-feather="facebook")
-              |  
-              a(href="#")
-                i(data-feather="twitter")
-              |  
-              a(href="#")
-                i(data-feather="instagram")
+            ul 
+              li 
+                a(href="") Inicio
+              li 
+                a(href="") Formulario avanzado
+              li 
+                a(href="") Aviso de privacidad
+              li 
+                a(href="") Términos y condiciones
+            ul 
+              li 
+                a(href="") Facebook
+              li 
+                a(href="") Twitter
+              li 
+                a(href="") Instagram
+            ul 
+              li Llámanos a los teléfonos 
+              li 
+                a(href="") (55) 89 16 52 35
+              li 
+                a(href="") (55) 89 16 52 36
+            ul 
+              li Escríbenos
+              li 
+                a(href="") Whatsapp
+              li 
+                a(href="") Correo electrónico
+            p Hecho con 💙 en México
 
       script.
         feather.replace()

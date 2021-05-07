@@ -2,23 +2,82 @@ html
  head
   link(href='stylesheets/style.css', rel='stylesheet')
   script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
- body.--bg-brand
-  .toolbar
-    .nav
-      div
-        img(src="images/logo.png", alt="Care Me logo", class="logo")
-      div
-        span.phone (55) 8916 5235
-        span.phone (55) 8915 5236
-  div.pad-40
-    h1.--outline Tu solicitud ha sido recibida
-    br
-    h5.--text-white 
-      | Nos comunicaremos contigo en los próximos minutos para confirmar la
-      br
-      | información que necesites en tu servicio.
 
-  script.
-    $(document).ready(function(){
-      console.log("This is something awesome");
-    });
+  link(rel="icon" type="image/png" href="images/favicon.png")
+
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+  link(rel="stylesheet", href="stylesheets/style.css")
+  link(rel="stylesheet", href="https://unpkg.com/aos@2.3.1/dist/aos.css")
+
+  script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
+  script(src="https://unpkg.com/feather-icons")
+  script(src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+  script(src="javascripts/jquery.serialize-object.js") 
+ 
+ body.--bg-brand
+  nav(style="background: var(--night)")
+      .container 
+        .row 
+          .col 
+            div(style="display: flex; justify-content: space-between")
+              a(href="/").navbar-brand
+                img(src="images/careme-light.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
+              div 
+                a(href="").btn.btn-alt Llámanos
+                a(href="").btn.btn-main Contacta por whatsapp
+        .row 
+
+    .hero
+      .container 
+        .row 
+          .col(style="display: flex; flex-direction: column; align-items: center")
+            .card(style="color: black").center.card-success
+              img(src="images/photos/customer-support.png", alt="alt", style="width: 30%")   
+              br
+              br
+              h4 Tu solicitud fue recibida 
+              p(style="color: black") Recibiras la llamada de uno de nuestros especialistas para realizar un diagnóstico de 
+                br
+                | necesidades y encontrar al personal que mejor se adapte a ti
+              p 
+                a(href="").btn.btn-alt Llámanos al (55) 89 16 52 35
+                a(href="").btn.btn-main Contacta por whatsapp
+
+    footer
+      .container
+        .row
+          .col 
+            a(href="/").navbar-brand
+                img(src="images/careme-light.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
+            br
+            br
+            ul 
+              li 
+                a(href="") Inicio
+              li 
+                a(href="") Formulario avanzado
+              li 
+                a(href="") Aviso de privacidad
+              li 
+                a(href="") Términos y condiciones
+            ul 
+              li 
+                a(href="") Facebook
+              li 
+                a(href="") Twitter
+              li 
+                a(href="") Instagram
+            ul 
+              li Llámanos a los teléfonos 
+              li 
+                a(href="") (55) 89 16 52 35
+              li 
+                a(href="") (55) 89 16 52 36
+            ul 
+              li Escríbenos
+              li 
+                a(href="") Whatsapp
+              li 
+                a(href="") Correo electrónico
+            p Hecho con 💙 en México

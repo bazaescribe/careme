@@ -10,7 +10,7 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Express' });
 });
 
-router.get('/thanks', function(req, res, next) {
+router.get('/success', function(req, res, next) {
   res.render('thanks', { title: 'Express' });
 });
 

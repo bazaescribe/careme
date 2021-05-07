@@ -4,6 +4,8 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
+    link(rel="icon" type="image/png" href="images/favicon.png")
+
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
     link(rel="stylesheet", href="stylesheets/style.css")
     link(rel="stylesheet", href="https://unpkg.com/aos@2.3.1/dist/aos.css")
@@ -16,158 +18,171 @@ html(lang="en")
 
     title Care Me - Cuidado profesional para tu familia
   body
-    nav.navbar.navigation
-      a(href="#").navbar-brand
-        img(src="images/careme-night.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
-      form(action="" method="method")
-        button.btn.btn-main LLÁMANOS (55) 8916 5235
-        button.btn.btn-accent WHATSAPP (55) 7832 1634
-    
-    .hero(style="background: var(--night)")
-      .container
-        .row
-          .col-lg 
-            h2.txt-light El mejor cuidado para los tuyos
-            hr
-            h5.txt-light Cuidado y acompañamiento profesional para las personas que más quieres. ❤️
-            br
+    nav(style="background: var(--night)")
+      .container 
+        .row 
+          .col 
+            div(style="display: flex; justify-content: space-between")
+              a(href="/").navbar-brand
+                img(src="images/careme-light.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
+              div 
+                a(href="").btn.btn-alt Llámanos
+                a(href="").btn.btn-main Contacta por whatsapp 
+
+    .hero.hero-home
+      .container 
+        .row 
+          .col(style="display: flex; flex-direction: column; align-items: center")
+            h1.center.text-light Cuidado profesional para tus seres queridos
+            h6.center.text-light Compártenos tus datos y nos comunicaremos lo antes posible
             form(id="contact")
-              p.caption.txt-light Déjanos tus datos y te contactaremos a la brevedad
-              .floating
+              .form-card
                 input(type="text", placeholder="Nombre de contacto" name="user_name")
                 input(type="text", placeholder="Teléfono", name="user_phone")
                 input(type="text", placeholder="Correo", name="user_mail")
                 input(type="button" value="Solicitar cotización" id="submit").btn.btn-main
-              p.caption.txt-light 
+              p.caption.txt-light.center
+                | o si lo prefieres
                 br
-                | Si tu paciente requiere cuidados especiales puedes solicitarlo
-                a(href="/contact")  aquí
-          .col-lg Adiós
-
-    .section.opinions
-      .opinion
-        .photo 
-          img(src="https://image.freepik.com/free-photo/beautiful-girl-stands-near-walll-with-leaves_8353-5377.jpg")
-        .text
-          p.quote Excelente servicio, el trabajo impecable y respetuosa en todo momento
-          p.caption María Fernanda Loredo Heinze - Ciudad de México
-
-    .section(style="background: var(--neutral-75)")
-      .container
-        .row
-          .col-6.step-text
-            div
-              h2 Cuidadores confiables
-              p Cientos de profesionales especializados en el cuidado de adultos mayores, pacientes post operatorios y lesionados, pasan por distintos filtros de selección para prestar sus servicios en la plataforma.
-              ul
-                li Seguridad y confiabilidad.
-                li Actitud y servicio.
-                li Conocimientos técnicos
-                li Documentación e identidad
-                li Certificados y cédula profesional. *
-              p.small * Validación exclusiva para el servicio de enfermeria
-          .col-6.step-photo
-            img(src="images/photos/cuidadores.png", alt="", data-aos="slide-left")
-    .section
-      .container
-        .row.jump
-          .col-4.step-photo
-            img(src="images/photos/solicitud.png", alt="", data-aos="zoom-in")
-          .col-8.step-text
-            div
-              h4 Solicita una cotización
-              p Déjanos tus datos en el formulario de contacto al inicio de está página, o platicanos si tú o tu paciente tiene alguna necesidad especial a cubrir en tu servicio en el formulario avanzado. 
                 br
-              |  Si lo prefieres también puedes enviarnos un mensaje.
-              br
-              br
-              a(href="/contact").btn.btn-main  Necesito atención especial
-              a(href="#").btn.btn-accent  Envíanos un WhatsApp
-        .row.jump.step-text
-          .col-8.step-text
+                a(href="/contact").btn.btn-ghost-light  ver el formulario avanzado       
+
+    section.bg-off-white
+      .container 
+        .row 
+          .col.center 
+            p ellos confían en nosotros
+            br
+            img(src="images/partners/tena.png", alt="")
+            img(src="images/partners/bsn.png", alt="")
+
+    .graphic 
+      section 
+        .container 
+          .row.jump 
+            .col 
+              img(src="images/photos/caregivers-people.png", alt="alt")
+            .col 
+              .point 
+                .number(style="background: var(--ocean)") 1
+                .info 
+                  h5 Solicita información
+                  p Compártenos tu información de contacto, en redes sociales, whatsapp o desde la plataforma; estamos para ayudarte a resolver todas tus dudas
+              .point 
+                .number(style="background: var(--teal)") 2
+                .info 
+                  h5 Espera la llamada
+                  p Uno de nuestros expertos en enfermería te contactará para entender mejor tus necesidades, sìntomas y el diagnostico clínico que tu médico haya emitido
+              .point 
+                .number(style="background: var(--night)") 3
+                .info 
+                  h5 Recibe el servicio
+                  p Uno de nuestros cuidadores o enfermeras se presentará en tu domicilio y te prestará el servicio que requieras con el profesionalismo que mereces
+          .row 
+            .col-lg 
+              .review 
+                .user 
+                  .photo 
+                    img(src="images/photos/old-lady.png", alt="")
+                  .info 
+                    h6 Name Last-name 
+                    .caption Location
+                .quote
+                    p Gracias a Lupita puedo seguir cuidando a mi mamá aunque yo ya no tenga tantas fuerzas como cuando era más joven.
+                .service
+                    p Servicio de enfermera
+                    .rate ★★★★★
+            .col-lg
+              .review 
+                .user 
+                  .photo 
+                    img(src="images/photos/mature-man.png", alt="")
+                  .info 
+                    h6 Name Last-name 
+                    .caption Location
+                .quote
+                    p Sólo estuve un par de semanas en cama por mi operación, pero si no fuera por doña Juana se habrían sentido como años.
+                .service
+                    p Servicio de enfermera
+                    .rate ★★★★★
+            .col-lg
+              .review 
+                .user 
+                  .photo 
+                    img(src="images/photos/young-mom.png", alt="")
+                  .info 
+                    h6 Name Last-name 
+                    .caption Location
+                .quote 
+                    p Las últimas semanas de mi embarazó fueron dificilísimas y haber contratado una cuidadora me salvo de volverme loca.
+                .service
+                    p Servicio de cuidador
+                    .rate ★★★★★
+
+    .bg-off-white 
+      .container 
+        .row 
+          .col-lg.center(style="overflow: hidden") 
+            img(src="images/photos/caregiver-big.png", alt="")
+          .col-lg(style="padding: 32px; display: flex; align-items: center") 
             div
-              h4 Solicita una cotización
-              p Uno de nuestros expertos en cuidados te llamara para entender de mejor manera las necesidades de tu paciente y te ayudará a encontrar a la persona ideal para su cuidado.
-          .col-4.step-photo
-            img(src="images/photos/diagnostico.png", alt="", data-aos="zoom-in")
-        .row
-          .col-4.step-photo
-            img(src="images/photos/caregiver.png", alt="", data-aos="zoom-in")
-          .col-8.step-text
-            div
-              h4 Solicita una cotización
-              p La persona con el  mejor perfil para tus necesidades se presentará en tu domicilio con toda la información que proporcionaste anteriormente, lista para prestar sus servicios con la mayor calidad y seguridad posible.
+              h3 Una comunidad segura
+              p Cuidadores y enfermeras pasan por un estricto proceso de selección para poder prestar sus servicios en la plataforma. Al mismo tiempo que reciben beneficios constantes para asegurar la tranquilidad de todos los miembros de nuestra comunidad.
+              ul 
+                li Examen psicométrico
+                li Examen de conocimientos técnicos
+                li Revisión de documentación
+      
+    section.bg-dark
+      .container 
+        .row 
+          .col.center.text-light 
+            h3 Con cobertura en toda la Ciudad de México
+              br
+              | y Área Metropolitana
+            br
+            br
+            img(src="images/photos/map.png", alt="")
+
     
-    div(style="background: var(--night)").section
-      .container
-        .row.section-first
-          .col.step-photo
-            img(src="images/photos/careme-en-casa.png", alt="")
-          .col.step-text
-            div
-              img(src="images/logo-en-casa.png", alt="")
-              br
-              br
-              p.text-white Sabemos que la vida en casa es agotadora, únete a nuestras comunidades de estudio, activación física y recreación; activa u mente y conoce nuevas personas desde la comodidad de tu hogar.
-
-    div(style="background: var(--teal)").section
+    footer
       .container
         .row
-          h3.text-white Cobertura en la CDMX y Área Metropolitana
-          p.text-white Actualmente la cobertura del servicio de Care Me comprende las dieciseis alcaldías de la Ciudad de México y cinco municipios del Estado de México, si necesitas un servicio fuera de esta zona no dudes en escribirnos y pronto llegaremos hasta donde estés.
-          div.chirp-list
-            span.chirp Álvaro Obregón
-            span.chirp Azcapotzalco
-            span.chirp Benito Juárez
-            span.chirp Coyoacán 
-            span.chirp Cuajimalpa de Morelos
-            span.chirp Cuauhtémoc
-            span.chirp Gustavo A. Madero
-            span.chirp Iztacalco
-            span.chirp Iztapalapa
-            span.chirp La Magdalena Contreras
-            span.chirp Miguel Hidalgo
-            span.chirp Milpa Alta
-            span.chirp Tláhuac
-            span.chirp Tlalpan
-            span.chirp Venustiano Carranza
-            span.chirp Xochimilco
-          div.chirp-list
-            span.chirp Ecatepec de Morelos
-            span.chirp Naucalpan
-            span.chirp Nezahualcóyotl
-            span.chirp Chimalhuacán 
-            span.chirp Tlalnepantla de Baz
-    .footer
-      .container
-        .row
-          div
-            a(href="#")
-              img(src="images/careme-light.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
+          .col 
+            a(href="/").navbar-brand
+                img(src="images/careme-light.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
             br
             br
-            p Llámanos al 
-              a(href="#") (55) 89 16 52 35
-              |  o al 
-              a(href="#") (55) 89 16 52 36
-              | , o 
-              a(href="#") escríbenos por whatsapp
-              | .
-            hr
-            p © 199 Technologies, 2020. Todos los derechos reservados. 
-              a(href="#") Aviso de privacidad 
-              |  -  
-              a(href="#") Términos y condiciones 
-            p.social 
-              a(href="#") 
-                i(data-feather="facebook")
-              |  
-              a(href="#")
-                i(data-feather="twitter")
-              |  
-              a(href="#")
-                i(data-feather="instagram")
-
+            ul 
+              li 
+                a(href="") Inicio
+              li 
+                a(href="") Formulario avanzado
+              li 
+                a(href="") Aviso de privacidad
+              li 
+                a(href="") Términos y condiciones
+            ul 
+              li 
+                a(href="") Facebook
+              li 
+                a(href="") Twitter
+              li 
+                a(href="") Instagram
+            ul 
+              li Llámanos a los teléfonos 
+              li 
+                a(href="") (55) 89 16 52 35
+              li 
+                a(href="") (55) 89 16 52 36
+            ul 
+              li Escríbenos
+              li 
+                a(href="") Whatsapp
+              li 
+                a(href="") Correo electrónico
+            p Hecho con 💙 en México
+          
       script.
         feather.replace()
 
@@ -191,7 +206,7 @@ html(lang="en")
           //window.location.replace('/success');
           $('.progress-bar').addClass('--processing');
           setTimeout(function(){
-            //window.location.href = '/registered';
+            window.location.href = '/success';
             console.log("Success");
           }, 1000);
         });

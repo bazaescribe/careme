@@ -2,14 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap');
 
 :root {
-  --ocean: #53BDF9;
-  --teal: #087CBF;
-  --night: #344966;
+  --ocean: #2EC0F9;
+  --teal: #252154;
+  --night: #5148AF;
   --mint: #BFF0D4;
-  --success: #09BC8A;
-  --warning: #E9D758;
-  --danger: #FE5F55;
-  --info: #F06C9B;
+  --purple: #776CF0;
+  --success: #06D6A0;
+  --warning: #FFE74C;
+  --danger: #FF5964;
+  --info: #26547C;
   --neutral-00: #141414;
   --neutral-25: #6B717E;
   --neutral-50: #B3B9C6;
@@ -19,6 +20,14 @@
 
 body{
   font-family: 'Roboto', sans-serif;
+}
+
+nav{
+  padding: 24px 0px;
+}
+
+section{
+  padding: 80px 0px;
 }
 
 h1{
@@ -77,12 +86,13 @@ body{
   color: #ECF0F1;
 }
 
-.btn{
-  border-radius: 0px;
-  margin: 4px 4px;
-  padding: 14px 32px;
-  font-size: 12px;
-  font-weight: bold;
+.center{
+  text-align: center;
+}
+
+.sticky{
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 hr{
@@ -93,23 +103,95 @@ hr{
   margin-left: 0px;
 }
 
+.btn{
+  border-radius: 8px;
+  margin: 4px 4px;
+  padding: 12px 24px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .btn-main{
   background: var(--ocean);
   color: var(--neutral-99);
 }
 
-.btn-dark{
-  background: var(--night);
+.btn-alt{
+  background: var(--purple);
   color: var(--neutral-99);
 }
 
-.btn-accent{
-  background: var(--mint);
+.btn-ghost{
+  border: 3px solid var(--neutral-00);
+  color: var(--neutral-00);
 }
 
-.section{
-  padding-top: 120px;
-  padding-bottom: 120px;
+.btn-ghost-light{
+  border: 3px solid var(--neutral-99);
+  color: var(--neutral-99);
+}
+
+.text-light{
+  color: var(--neutral-99)
+}
+
+.hero{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  background: var(--night);
+}
+
+.hero-home{
+  background: var(--night);
+  background-image: url('/images/photos/caregiver-hero.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -o-background-size: auto 100%;
+  background-size: auto 100%;
+  background-position-y: bottom;
+  padding-top: 260px;
+  padding-bottom: 60px;
+}
+
+/* .hero h1, .hero h6, .hero p{
+  color: var(--neutral-99);
+} */
+
+.form-card{
+  background: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  margin: 32px 0px;
+  padding: 8px;
+  padding-right: 2px;
+  border-radius: 12px;
+}
+
+.form-card input{
+  margin: 4px 12px;
+  border: none;
+  outline: none;
+}
+
+.bg-off-white{
+  background: var(--neutral-75);
+}
+
+.bg-alt{
+  background: var(--night);
+}
+
+.bg-brand{
+  background: var(--ocean);
+}
+
+.bg-dark{
+  background: var(--teal);
 }
 
 .jump{
@@ -124,17 +206,6 @@ hr{
   position: fixed;
   width: 100%;
   z-index: 90;
-}
-
-.hero{
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
-.floating{
-  background: white;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-  display: inline-block;
 }
 
 .floating input{
@@ -181,28 +252,28 @@ hr{
   text-align: center;
 }
 
-.footer{
+footer{
   background: var(--neutral-00);
   color: var(--neutral-25);
   padding: 64px 0px;
   font-size: 12px;
 }
 
-.footer hr{
-  border-color: var(--neutral-25);
-  border-width: 1px;
-  width: 70%;
-  margin-left: 0px;
-}
-
-.footer a{
+footer a{
   color: var(--neutral-25);
   font-weight: bold;
 }
 
-.social a{
-  color: var(--ocean);
-  margin-right: 20px;
+footer ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  margin-bottom: 8px;
+}
+
+footer li{
+  margin-right: 24px;
 }
 
 .chirp-list{
@@ -228,6 +299,12 @@ hr{
   background: white;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
   padding: 32px;
+}
+
+.card-success{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .input-text{
@@ -279,4 +356,45 @@ input[type=checkbox]:checked + label {
 
 input[type=checkbox]{
   display: none;
+}
+
+.point{
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.point .number{
+  font-size: 40px;
+  font-weight: 600;
+  border-radius: 50%;
+  min-width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  color: var(--neutral-99);
+}
+
+.review{
+  background: var(--teal);
+  padding: 24px;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.review .user{
+  display: flex;
+  align-items: center;
+}
+
+.review .photo{
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+  margin-bottom: 12px;
 }
