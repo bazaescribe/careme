@@ -3,6 +3,9 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name='description' content='Servicio de enfermería a domicilio en la Ciudad de México')
+    meta(name='keywords' content='enfermería, domicilio, Cuidadora, post operatorio, operación, enfermera, cuidado')
+    meta(name='author' content='199 Technologies')
 
     link(rel="icon" type="image/png" href="images/favicon.png")
 
@@ -22,10 +25,10 @@ html(lang="en")
       .container 
         .row 
           .col 
-            div(style="display: flex; justify-content: space-between")
+            div(style="display: flex; justify-content: space-between")#logo
               a(href="/").navbar-brand
                 img(src="images/careme-light.png", alt="Care Me - Cuidado profesional para tu familia", srcset="").logo
-              div 
+              div#menu
                 a(href="").btn.btn-alt Llámanos
                 a(href="").btn.btn-main Contacta por whatsapp 
 
@@ -61,7 +64,7 @@ html(lang="en")
         .container 
           .row.jump 
             .col 
-              img(src="images/photos/caregivers-people.png", alt="alt")
+              img(src="images/photos/caregivers-people.png", alt="alt")#examples
             .col 
               .point 
                 .number(style="background: var(--ocean)") 1
@@ -143,6 +146,10 @@ html(lang="en")
             br
             br
             img(src="images/photos/map.png", alt="")
+
+    .contact-reel 
+      a(href="").btn.btn-alt Llámanos
+      a(href="").btn.btn-main Contacta por whatsapp 
 
     
     footer

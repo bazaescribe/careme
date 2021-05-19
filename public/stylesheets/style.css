@@ -110,6 +110,7 @@ hr{
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
+  transition: 300ms ease all;
 }
 
 .btn-main{
@@ -117,9 +118,19 @@ hr{
   color: var(--neutral-99);
 }
 
+.btn-main:hover{
+  background: #24A7DA;
+  color: white;
+}
+
 .btn-alt{
   background: var(--purple);
   color: var(--neutral-99);
+}
+
+.btn-alt:hover{
+  background: #7168CF;
+  color: white;
 }
 
 .btn-ghost{
@@ -130,6 +141,11 @@ hr{
 .btn-ghost-light{
   border: 3px solid var(--neutral-99);
   color: var(--neutral-99);
+}
+
+.btn-ghost-light:hover{
+  color: var(--night);
+  background: var(--neutral-99);
 }
 
 .text-light{
@@ -397,4 +413,58 @@ input[type=checkbox]{
   overflow: hidden;
   margin-right: 12px;
   margin-bottom: 12px;
+}
+
+.contact-reel{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--teal);
+  color: white;
+  text-align: center;
+  padding: 16px;
+  z-index: 100;
+  display: none;
+}
+
+@media (max-width: 700px) {
+  nav #menu{
+    display: none;
+  }
+
+  nav{
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-home{
+    padding-top: 100px;
+    background: var(--night);
+    /* background-image: url('/images/photos/caregiver-hero.png'); */
+  }
+
+  .hero-home h1{
+    font-size: 54px;
+  }
+
+  .form-card{
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+
+  .form-card input{
+    width: 90%;
+    margin-bottom: 16px;
+  }
+
+  .contact-reel{
+    display: block;
+  }
+
+  #examples{
+    width: 300px;
+    margin-bottom: 48px;
+  }
 }
